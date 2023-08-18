@@ -117,6 +117,7 @@ func (c *Cli) Login() entity.User {
 	loggedInUserID, err := c.UserHandler.Login(email, password)
 	if err != nil {
 		fmt.Println("\nFailed to login!")
+		c.AuthMenu()
 		return entity.User{}
 	} else {
 		fmt.Println("\nSuccess login user!")
